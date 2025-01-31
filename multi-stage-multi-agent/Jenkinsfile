@@ -7,17 +7,20 @@ pipeline {
       }
       steps {
         sh 'mvn --version'
-        sh 'docker rmi -f maven:3.8.1-adoptopenjdk-11'
       }
     }
+    
+    docker rmi -f maven:3.8.1-adoptopenjdk-11
+    
     stage('Front-end') {
       agent {
         docker { image 'node:16-alpine' }
       }
       steps {
         sh 'node --version'
-        sh  'docker rmi -f node:16-alpine'
       }
     }
+
+    docker rmi -f node:16-alpine
   }
 }
