@@ -53,6 +53,7 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
+                     pwd
                      ls -ltra
                      git config user.email "mashood.xyz@gmail.com"
                      git config user.name "Mashood Ali Khan"
