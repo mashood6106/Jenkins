@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "https://885d-106-219-146-252.ngrok-free.app"
+        SONAR_URL = "https://bae6-106-219-151-134.ngrok-free.app"
       }
       steps {
         withCredentials([string(credentialsId: 'Sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
