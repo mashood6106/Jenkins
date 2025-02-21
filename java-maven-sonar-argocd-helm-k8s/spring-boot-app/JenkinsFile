@@ -62,7 +62,7 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
-                     git status
+                     git config --global --add safe.directory /var/lib/jenkins/workspace/Spring-boot-app
                      git config user.email "mashood.xyz@gmail.com"
                      git config user.name "Mashood Ali Khan"
                      BUILD_NUMBER=${BUILD_NUMBER}
